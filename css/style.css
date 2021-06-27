@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body{
+    font-family: 'Merriweather Sans', sans-serif;
+    color: #41658a;
+}
+
+.wrapper{
+    height: 500px;
+    background-color: rgb(133, 196, 252);
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+h1{
+    font-size: 50px;
+    width: 600px;
+    line-height: 1.5;
+
+}
+.restart{
+    width: 175px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 50px;
+    border: 2px solid #41658a;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.restart:hover{
+    color: rgb(138, 193, 241);
+    background-color: rgb(71, 71, 71);
+    border: black;
+}
+
+.header {
+    display: flex;
+    color: rgb(3, 65, 70);
+    font-weight: bolder;
+    font-size: 24px;
+
+}
+
+.header .player-x{
+    flex: 1;
+    border-bottom: 4px solid rgb(3, 65, 70);
+    padding-bottom: 8px;
+    
+}
+
+.header .player-o{
+    flex: 1;
+    border-bottom: 4px solid rgb(3, 65, 70);
+    padding-bottom: 8px;
+}
+
+
+.game {
+    display: flex;
+    flex-direction: column;
+    width : 400px;
+    height: 400px;
+
+}
+.board {
+   
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px;
+
+}
+.board-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: white;
+}
+
+.board-tile:not(:nth-child(3n)){
+    border-right: 3px solid rgb(2, 2, 133);
+}
+
+.board-tile:not(:nth-last-child(-n+3)){
+    border-bottom: 3px solid rgb(2, 2, 133);
+}
+
+.board-tile:hover{
+    background-color: #eeeeee;
+    cursor: pointer;
+}
+
+.footer{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arun img{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.nipun img{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.footer span{
+    margin-right: 50px;
+}
+
+.player-x.active{
+    color: #be11e0;
+    border-color: #be11e0;
+}
+
+.player-o.active{
+    color: #be11e0;
+    border-color: #be11e0;
+}
+
+.tile-x{
+    color: #c652dd;
+}
+
+.tile-o{
+    color: rgb(212, 44, 66);
+}
+
+.tile-winner span{
+    color: rgb(6, 97, 6);
+}
+
+@media only screen and (max-width: 1200px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left{
+        margin-bottom: 50px;
+
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .wrapper{
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+
+    }
+    .left{
+       margin-left: 60px;
+    }
+
+    .left h1{
+        max-width: 600px;
+        position: relative;
+        left: 17%;
+
+    }
+    .an{
+        position: relative;
+        left: 22%;
+    }
+
+    .restart{
+        position: relative;
+        left: 22%;
+        /* margin: auto; */
+    }
+}
